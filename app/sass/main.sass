@@ -1,0 +1,2479 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*::-webkit-input-placeholder
+	color: #fff
+	opacity: 1
+	font-size: 14px
+
+*:-moz-placeholder
+	color: #fff
+	opacity: 1
+	font-size: 14px
+
+*::-moz-placeholder
+	color: #fff
+	opacity: 1
+	font-size: 14px
+
+*:-ms-input-placeholder
+	color: #fff
+	opacity: 1
+	font-size: 14px
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	border-color: red
+body input:required:valid,
+body textarea:required:valid
+	border-color: green
+
+* 
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+	outline: none
+
+a, a:hover, a:focus, a:active, a:visited
+	text-decoration: none
+	transition: .3s linear
+
+li 
+	list-style: none
+
+html
+	overflow-x: hidden
+
+body
+	font-size: 14px
+	line-height: 1.5
+	font-family: $Roboto
+	overflow-x: hidden
+	color: #fff
+	background-color: #0e1522
+	position: relative
+	text-rendering: optimizeLegibility
+	-webkit-font-smoothing: antialiased
+
+h1,h2,h3,h4,h5,h6
+	font-family: $Roboto
+
+img
+	max-width: 100%
+	height: auto
+
+.wrapper
+	max-width: 1160px
+	margin: 0 auto
+	padding: 0 10px
+
+.page-head
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-size: 100%!important
+	background-repeat: no-repeat!important
+	background-position: top center!important
+	z-index: -1
+
+.section-title
+	letter-spacing: 1px
+	font-size: 48px
+	font-weight: 900
+	font-style: italic
+	text-transform: uppercase
+	position: relative
+	line-height: normal
+	&::after
+		content: ''
+		height: 100px
+		width: 192px
+		background: #ff137d
+		position: absolute
+		right: -15px
+		top: 50%
+		z-index: -1
+		transform: translate(0,-50%) skew(-28deg)
+
+.sidebar-all-news
+	display: none
+	a
+		display: inline-block
+		background: #197be6
+		border-radius: 4px
+		max-width: 300px
+		width: 100%
+		margin-left: 30px
+		color: #fff 
+		font-size: 14px
+		font-weight: 500
+		line-height: 1.5
+		text-align: center
+		padding: 9px 10px 8px
+		&:hover
+			background: #197be6
+.button-all__center
+	text-align: center
+	margin-top: 12px
+	a 
+		margin: 0
+
+/* -- header -- */
+.header
+	padding-top: 57px
+	z-index: 9
+	&-social
+		display: none!important
+		ul
+			display: flex
+			flex-flow: row wrap
+			justify-content: space-between
+			align-items: center
+			li 
+				margin: 0 18px
+				&:first-child
+					margin-left: 0
+				&:last-child
+					margin-right: 0
+				a:hover
+					opacity: .2
+	&-logo
+		text-align: center
+		margin-bottom: 35px
+		a 
+			display: block
+			max-width: 93px
+			max-height: 50px
+			margin: 0 auto
+	&-nav
+		ul
+			display: flex
+			flex-flow: row wrap	
+			justify-content: space-between
+			margin: 0 auto 60px
+			max-width: 790px
+			li 
+				a 
+					color: #fff
+					font-weight: 500
+					font-size: 18px
+					line-height: 1
+					&.active,&:hover
+						color: #ff137d
+
+.menu-bar span, .menu-bar span:before, .menu-bar span:after
+	display: block
+	height: 2px
+	width: 30px
+	position: absolute
+	top: 50%
+	margin-top: -2px
+	left: 50%
+	margin-left: -12px
+	background: #fff
+
+.menu-bar
+	width: 30px
+	position: relative
+	height: 30px
+	z-index: 1000
+	cursor: pointer
+	display: none
+	position: absolute
+	top: 50%
+	left: 30px
+	transform: translate(0%,-50%)
+	span
+		&:after
+			content: ''
+			transition: all .2s ease
+			margin-top: 6px
+			left: -3px
+			margin-left: 0
+		&:before
+			content: ''
+			transition: all .2s ease
+			margin-top: -8px
+
+.open-menu
+	.menu-bar
+		span
+			background: transparent
+			&:after
+				transform: rotate(-135deg)
+				margin-top: 0
+				left: 1px
+			&:before
+				transform: rotate(135deg)
+				margin-top: 0
+
+/* -- main -- */
+.main
+	margin-bottom: 30px 
+	.wrapper
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-between
+.sidebar
+	width: 31.58%
+	&-wrap
+		background: #111b2c
+		border-radius: 6px
+		box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.1)
+		&__marginB
+			margin-bottom: 30px
+	&-head
+		padding: 20px 30px 21px
+		border-bottom: 1px solid rgba(#fff,0.05)
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-between
+		align-items: center
+		position: relative
+		p 
+			font-weight: 500
+			font-size: 18px
+			color: #fff
+			line-height: 1
+		a 
+			line-height: 1.29
+			font-size: 14px
+			font-weight: 500
+			color: #197be6
+	&-rating
+		&__wrap
+			padding: 0 30px 25px
+		&__logo
+			margin-bottom: 6px
+			img
+				max-width: 90px
+		&__column
+			padding: 19px 0 19px 39px
+			display: flex
+			flex-flow: row wrap
+			justify-content: space-between
+			align-items: center
+			border-bottom: 1px solid rgba(#fff,0.05)
+			position: relative
+			span
+				position: absolute
+				top: 50%
+				left: 0
+				transform: translate(0,-50%)
+				color: #fbc100
+				letter-spacing: 1px
+				font-weight: 500
+				font-size: 12px
+			div
+				&:last-child
+					a 
+						font-weight: 500
+						color: #fff 
+						font-size: 14px
+						line-height: 1.5
+						background: #197be6
+						padding: 9px 25px 8px
+						border-radius: 4px
+						&:hover
+							background: #1991eb
+			&:last-child
+				border-bottom: none
+	&-popular
+		&__drop
+			padding-bottom: 28px
+			position: relative
+		&__down
+			position: absolute
+			width: 40px
+			height: 40px
+			cursor: pointer
+			bottom: 15px
+			left: 50%
+			transform: translate(-50%,0)
+		&__menu
+			position: absolute
+			right: 20px
+			top: 50%
+			transform: translate(0,-50%)
+		&__mob
+			display: none
+		&__wrap
+			padding: 0 30px
+		&__news
+			padding: 27px 10px 27px 0
+			border-bottom: 1px solid rgba(#fff,0.05)
+			&:last-child
+				padding-bottom: 15px
+				border-bottom: none
+			&-category
+				display: inline-block
+				margin-bottom: 15px
+				color: #fbc100
+				line-height: 1
+				font-size: 12px
+				letter-spacing: 1px
+				font-weight: 500
+				text-transform: uppercase
+			&-title
+				padding-bottom: 13px
+				a 
+					color: #fff
+					line-height: 1.31
+					font-weight: 300
+					font-size: 26px
+			&-text
+				color: #fff
+				opacity: .5
+				font-weight: normal
+				line-height: 1.5
+				font-size: 14px
+				margin-bottom: 10px
+				a 
+					color: #fff
+			&-time
+				opacity: .5
+				font-size: 14px
+				line-height: 1
+				font-weight: normal
+				color: #fff
+				a 
+					color: #fff
+	&-matches
+		padding-bottom: 18px
+		&__head
+			display: flex
+			flex-flow: row wrap
+			justify-content: space-between
+			align-items: flex-end
+			padding: 18px 30px 16px
+			border-bottom: 1px solid rgba(255, 255, 255, 0.05)
+			ul
+				display: flex
+				flex-flow: row nowrap
+				justify-content: space-between
+				width: 100%
+				max-width: 202px
+				li 
+					font-size: 14px
+					line-height: 1.86
+					font-weight: normal
+					color: #888d95
+					cursor: pointer
+					a 
+						color: #888d95
+					&.matches-active,&:hover
+						font-weight: 500
+						color: #fff 
+						a 
+							color: #fff
+		&__title
+			font-size: 18px
+			font-weight: 500
+			color: #fff
+			line-height: 1.44
+		&__wrap
+			border-bottom: 1px solid rgba(255, 255, 255, 0.05)
+			display: flex
+			flex-flow: row wrap
+			padding: 18px 30px 11px
+			position: relative
+			&:last-child
+				border-bottom: none
+		&__time
+			padding-right: 34px
+			p 
+				margin-bottom: 3px
+				color: #fff 
+				font-size: 20px
+				font-weight: normal
+				line-height: 1.3
+			span
+				font-size: 14px
+				color: #fff
+				opacity: .5
+				line-height: 1.86
+				font-weight: normal
+		&__command
+			padding-right: 10px
+			div
+				margin-bottom: 8px
+				color: #fff 
+				font-weight: bold
+				font-size: 13px
+				letter-spacing: 0.5px
+				line-height: normal
+				display: flex
+				flex-flow: row wrap
+				align-items: flex-end
+				img
+					margin-right: 14px
+				&:last-child
+					margin-bottom: 0
+		&__score
+			position: absolute
+			right: 30px
+			top: 50%
+			transform: translate(0,-50%)
+			p 
+				font-weight: bold
+				font-size: 25px
+				color: #fff 
+				letter-spacing: 4.3px
+
+
+.content
+	width: 65.79%
+
+.news
+	&-big
+		height: 372px
+		margin-bottom: 30px
+		border-radius: 6px
+		overflow: hidden
+		background-size: cover!important
+		background-position: center!important
+		position: relative
+		&::after
+			content: ''
+			position: absolute
+			bottom: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background-image: linear-gradient(to bottom, rgba(14, 21, 34, 0), rgba(14, 21, 34, 0.71))
+		&__time
+			position: absolute
+			top: 20px
+			right: 20px
+			color: rgba(#fff,0.5)
+			line-height: 1
+			font-eright: normal
+			z-index: 1
+		&__wrap
+			position: absolute
+			bottom: 30px
+			left: 30px
+			z-index: 1
+			&-category
+				margin-bottom: 11px
+				display: inline-block
+				font-weight: 500
+				color: #fbc100
+				letter-spacing: 1px
+				font-size: 12px
+				line-height: 1
+				text-transform: uppercase
+			&-title
+				max-width: 420px
+				margin-bottom: 11px
+				a 
+					color: #fff 
+					line-height: 1.31
+					font-weight: 300
+					font-size: 26px
+			&-text
+				max-width: 490px
+				opacity: .5
+				font-weight: normal
+				line-height: 1.5
+				font-size: 14px
+	&-row
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-between
+	&-article
+		width: 48%
+		border-radius: 6px
+		overflow: hidden
+		background: #111b2c
+		box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.1)
+		img
+			width: 100%
+		&__title
+			margin-bottom: 5px
+			a 
+				color: #fff 
+				line-height: 1.31
+				font-weight: 300
+				font-size: 26px
+		&__text
+			max-width: 290px
+			opacity: .5
+			font-weight: normal
+			line-height: 1.5
+			font-size: 14px
+		&__wrap
+			padding: 21px 20px 15px 30px
+		&__head
+			display: flex
+			flex-flow: row wrap
+			justify-content: space-between
+			align-items: center
+			padding-bottom: 12px
+			p 
+				color: #fff 
+				opacity: .5
+				line-height: 1
+				font-size: 14px
+				font-weight: normal
+				a 
+					color: #fff
+	&-category
+		display: inline-block
+		font-weight: 500
+		color: #fbc100
+		letter-spacing: 1px
+		font-size: 12px
+		line-height: 1
+		text-transform: uppercase
+
+.content-statistics__forecasts
+	background: #111b2c
+	border-radius: 6px
+	box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.1)
+	margin-bottom: 30px
+	&:last-child
+		margin-bottom: 0
+
+.statistics
+	&-forecasts
+		&__head
+			&-wrap
+				padding: 18px 30px 17px 30px
+				display: flex
+				flex-flow: row wrap
+				align-items: center
+				justify-content: space-between
+				position: relative
+				border-bottom: 1px solid rgba(#fff, 0.05)
+			&-title
+				line-height: 1.44
+				font-weight: 500
+				font-size: 18px
+				color: #fff
+			&-link
+				position: absolute
+				top: 20px
+				right: 30px
+				color: #197be6
+				font-weight: 500
+				line-height: 1.29
+				font-size: 14px
+			&-menu
+				display: flex
+				flex-flow: row nowrap
+				max-width: 161px
+				width: 100%
+				justify-content: space-between
+				p 
+					padding: 0 9px
+					font-size: 14px
+					font-weight: normal
+					color: #fff
+		&__column
+			border-bottom: 1px solid rgba(#fff, 0.05)
+			&:last-child
+				border-bottom: none
+			&-wrap
+				padding: 17.5px 148px 17.5px 38px
+				display: flex
+				flex-flow: row nowrap
+				align-items: center
+				position: relative
+				//justify-content: space-between
+			&-time
+				p 
+					font-weight: normal
+					color: #fff 
+					font-size: 20px
+					line-height: 1.3
+					margin-bottom: 3px
+				span
+					opacity: .5
+					line-height: 1.86
+					color: #fff
+					font-size: 14px
+					font-weight: normal
+			&-img
+				margin: 0 30px 0 32px
+				div
+					width: 48px
+					height: 48px
+					border-radius: 50%
+					overflow: hidden
+					img
+						width: 100%
+			&-title
+				margin-bottom: 12px
+				text-transform: uppecase
+				font-size: 14px
+				letter-spacing: 0.5px
+				font-weight: bold
+			&-text
+				opacity: .5
+				color: #fff 
+				font-size: 14px
+				letter-spacing: 0.5px
+				font-weight: normal
+	&-num
+		display: flex
+		flex-flow: row wrap
+		align-items: center
+		justify-content: space-between
+		max-width: 161px
+		width: 100%
+		position: absolute
+		top: 50%
+		transform: translate(0,-50%)
+		right: 30px
+		p 
+			font-size: 14px
+			font-weight: normal
+			color: #fff
+
+/* -- small-news -- */
+.small-news
+	.wrapper
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-between
+	&__column
+		width: 31.67%
+		background: #111b2c
+		border-radius: 6px
+		box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.1)
+		margin-bottom: 30px
+		padding: 68px 44px 30px
+		position: relative
+		&-tag
+			position: absolute
+			top: 22px
+			right: 22px
+			background: #197be6
+			border-radius: 5px
+			color: #fff 
+			padding: 5px 6px 5px 12px
+			font-size: 10px
+			display: inline-block
+			font-weight: bold
+			letter-spacing: 0.5px
+			text-transform: uppercase
+			line-height: 1
+			&:hover
+				background: #1991eb
+		&-title
+			margin-bottom: 8px
+			line-height: 1
+			font-size: 18px
+			font-weight: normal
+			color: #f9f9f9
+		&-text
+			opacity: .5
+			font-size: 14px
+			color: #fff 
+			font-weight: normal
+			line-height: 1.5
+			margin-bottom: 22px
+		&-link
+			font-weight: normal
+			color: #197be6
+			font-size: 16px
+			&:hover
+				color: #fff
+
+/* -- rateTV -- */
+.rateTV
+	background-size: cover!important
+	background-position: center!important
+	padding-top: 200px
+	position: relative
+	min-height: 1066px
+	&::after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		//opacity: .26
+		background-image: linear-gradient(to bottom, #0e1522, rgba(14, 21, 34, 0) 53%, #0e1522)
+	.wrapper
+		position: relative
+		z-index: 1
+	&-head
+		margin-bottom: 60px
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-between
+		&__title
+			max-width: 262px
+			&::before
+				content: ''
+				position: absolute
+				right: -160px
+				top: -10px
+				width: 110px
+				height: 87px
+				background-size: contain!important
+				background: url(../img/plus.png)
+		&__menu
+			display: flex
+			flex-flow: row wrap
+			justify-content: space-between
+			max-width: 505px
+			width: 100%
+			&-item
+				max-width: 120px
+				width: 25%
+				text-align: center
+				div
+					height: 60px
+					width: 60px
+					border-radius: 50%
+					overflow: hidden
+					margin: 0 auto 16px
+					img
+						width: 100%
+				p 
+					font-weight: normal
+					line-height: 1.63
+					opacity: .8
+					font-size: 16px
+					color: #fff
+	&-content
+		&__video
+			height: 400px
+			width: 80%
+			margin: 0 auto 30px
+			background-size: cover!important
+			background-position: center!important
+		&__row
+			padding-bottom: 10px
+			display: flex
+			flex-flow: row wrap
+			justify-content: space-between
+		&__item
+			margin-bottom: 30px
+			width: 31.5%
+			height: 233px
+			border-radius: 6px
+			overflow: hidden
+			position: relative
+			background-size: cover!important
+			background-position: center!important
+			&-link
+				display: block
+				position: absolute
+				width: 100%
+				height: 100%
+				top: 0
+				left: 0
+				z-index: 2
+			&::after
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				z-index: 0
+				background-image: linear-gradient(to bottom, rgba(14, 21, 34, 0), rgba(14, 21, 34, 0.71))
+			&-tag
+				position: absolute
+				top: 22px
+				right: 22px
+				z-index: 3
+				border-radius: 5px
+				background: #fc6e4f
+				color: #fff 
+				padding: 5px 11px
+				font-size: 10px
+				letter-spacing: 0.5px
+				text-align: center
+				display: inline-block
+				line-height: 1
+				&:hover
+					opacity: .5
+			&-title
+				position: absolute
+				left: 34px
+				bottom: 37px
+				font-weight: 300
+				color: #f9f9f9
+				font-size: 26px
+				z-index: 1
+
+/* -- expert -- */
+.expert
+	padding: 170px 0 200px
+	&-title
+		max-width: 250px
+		line-height: normal
+		&::after
+			transform: translate(0,-26%) skew(-28deg)
+			right: -22px
+	&-row
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-between
+	&-info
+		width: 50%
+		align-self: flex-end
+		order: 1
+		&__category
+			margin-bottom: 30px
+			display: inline-block
+			color: #fbc100
+			font-weight: 500
+			font-size: 12px
+			line-height: 1
+			letter-spacing: 1px
+			text-transform: uppercase
+		&__title
+			font-size: 37px
+			color: #fff 
+			letter-spacing: 0.4px
+			font-weight: normal
+			margin-bottom: 27px
+			display: flex
+			flex-flow: row wrap
+			align-items: center
+			line-height: 1.42
+			span
+				font-weight: 300
+				margin: 0 21px
+			img
+				max-width: 40px
+				max-height: 40px
+				margin-right: 15px
+		&__text
+			line-height: 1.89
+			font-size: 18px
+			color: #fff 
+			letter-spacing: -0.3px
+			font-weight: normal
+			margin-bottom: 34px
+		&__buttons
+			a 
+				display: inline-block
+				padding: 9px 25px 8px
+				color: #fff
+				font-weight: 500
+				font-size: 14px
+				line-height: 1.5
+				border-radius: 4px
+				background: #273142
+				margin-right: 22px
+				&:hover
+					background: #197be6
+				&.active-button
+					background: #197be6
+					&:hover
+						background: #273142
+	&-person
+		width: 50%
+		height: 500px
+		position: relative
+		order: 2
+		&::after
+			content: ''
+			height: 500px
+			width: 500px
+			background: #ff137d
+			position: absolute
+			right: 95px
+			bottom: 0
+			z-index: -1
+			transform: skew(-28deg)
+		img
+			max-width: 479px
+			position: absolute
+			bottom: 0
+			right: 44px
+		&__text
+			right: 30px
+			bottom: 27px
+			position: absolute
+			display: flex
+			flex-flow: row nowrap
+			align-items: flex-end
+		&__name
+			max-width: 175px
+			font-size: 42px
+			font-weight: bold
+			letter-spacing: 0.9px
+			color: #fff 
+			text-shadow: 0 32px 150px rgba(251, 193, 0, 0.12)
+			text-align: right
+			line-height: normal
+			position: relative
+			text-transform: uppercase
+			&::after
+				content: ''
+				position: absolute
+				bottom: 6px
+				right: -28px
+				height: 64px
+				width: 1.5px
+				background: #fff
+				transform: rotate(30deg)
+		&__position
+			padding-left: 42px
+			opacity: .5
+			color: #fff 
+			font-size: 25px
+			font-weight: 500
+			align-self: flex-end
+			text-transform: uppercase
+
+/* -- bschool -- */
+.bschool
+	&-title
+		max-width: 190px
+		margin: 0 auto 110px
+		&::after
+			right: -70px
+			transform: translate(0,-34%) skew(-28deg)
+	&-content
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-between
+	&-row
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-between
+		width: 49.5%
+	&-post
+		height: 270px
+		width: 47.3%
+		margin-top: 30px
+		background-size: cover!important
+		background-position: center!important
+		border-radius: 2px
+		position: relative
+		overflow: hidden
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			z-index: 0
+			background-image: linear-gradient(to bottom, rgba(14, 21, 34, 0), rgba(14, 21, 34, 0.71))
+		&__link
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			z-index: 1
+		&__wrap
+			position: absolute
+			bottom: 30px
+			left: 30px
+			z-index: 1
+			max-width: 220px
+		&__category
+			display: inline-block
+			z-index: 3
+			margin-bottom: 7px
+			text-transform: uppercase
+			font-weight: 500
+			font-size: 12px
+			letter-spacing: 1px
+			line-height: 1
+			color: #fbc100
+		&__title
+			margin-bottom: 6px
+			font-size: 21px
+			font-weight: 300
+			line-height: 1.38
+			color: #fff 
+		&__info
+			font-size: 14px
+			opacity: .5
+			z-index: 3
+			color: #fff 
+			font-weight: normal
+			line-height: normal
+			color: #fff 
+	&-big 
+		width: 48.2%
+		margin-top: 30px
+		height: 568px
+		background-size: cover!important
+		background-position: center!important
+		border-radius: 6px
+		position: relative
+		overflow: hidden
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			z-index: 0
+			background-image: linear-gradient(to bottom, rgba(14, 21, 34, 0), rgba(14, 21, 34, 0.71))
+		&__wrap
+			position: absolute
+			bottom: 50px
+			left: 48px
+			max-width: 300px
+			z-index: 1
+		&__link
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			z-index: 1
+		&__title
+			color: #fff 
+			font-size: 42px
+			font-weight: bold
+			line-height: normal
+			letter-spacing: 0.9px
+			text-transform: uppercase
+			text-shadow: 0 32px 150px rgba(251, 193, 0, 0.12)
+			margin-bottom: 2px
+		&__text
+			color: #fff
+			text-transform: uppercase
+			opacity: .5
+			font-size: 25px
+			font-weight: 500
+			line-height: normal
+
+/* -- attachment -- */
+.attachment
+	background-size: cover!important
+	background-position: center!important
+	padding: 270px 0 260px
+	position: relative
+	&::after
+		content: ''
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-image: linear-gradient(to bottom, #0e1522, rgba(14, 21, 34, 0) 53%, #0e1522)
+	.wrapper
+		position: relative
+		z-index: 1
+	&-title
+		max-width: 420px
+		margin-bottom: 80px
+		&::after
+			transform: translate(0,-33%) skew(-28deg)
+			right: 80px
+	&-text
+		margin-bottom: 70px
+		line-height: 1.38
+		font-weight: 300
+		color: #fff 
+		font-size: 21px
+	&-wrap
+		padding: 0 0 0 155px
+		max-width: 645px
+		a 
+			max-width: 130px
+			display: inline-block
+	&-phone
+		position: absolute
+		right: 0
+		top: -73px
+		max-width: 550px
+
+/* -- footer -- */
+.footer
+	padding: 63px 0 124px
+	background: #0e1522
+	&-mob
+		display: none
+	&-top
+		border-top: 1px solid rgba(#fff,.1)
+		padding: 50px 0
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-between
+		align-items: center
+	&-logo
+		max-width: 93px
+	&-nav
+		ul
+			display: flex
+			flex-flow: row wrap
+			justify-content: space-between
+			align-items: center
+			li 
+				margin: 0 14px
+				a 
+					line-height: 1
+					color: #fff 
+					font-weight: 500
+					font-size: 18px
+					&.active,&:hover
+						color: #ff137d
+	&-social
+		ul
+			display: flex
+			flex-flow: row wrap
+			justify-content: space-between
+			align-items: center
+			li 
+				margin: 0 18px
+				&:first-child
+					margin-left: 0
+				&:last-child
+					margin-right: 0
+				a:hover
+					opacity: .2
+	&-bottom
+		max-width: 370px
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-between
+		align-items: center
+		p 
+			opacity: .5
+			color: #fff 
+			font-size: 14px
+			font-weight: normal
+			line-height: 1.5
+		a
+			max-width: 140px
+
+/* -- page ABOUT -- */
+.content
+	&-about
+		background: #111b2c
+		border-radius: 6px
+		padding: 57px 50px 80px 115px
+		box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.1)
+		img
+			margin-bottom: 14px
+	&-forecastMain
+		background: #111b2c
+		border-radius: 6px
+		padding: 30px 115px 60px 115px
+		box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.1)
+	&-newsMain
+		background: #111b2c
+		border-radius: 6px
+		padding: 30px 112px 60px 115px
+		box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.1)
+
+.about
+	&-col
+		padding-bottom: 10px
+		&__title
+			margin-bottom: 14px
+			font-weight: 300
+			font-size: 26px
+			color: #fff 
+			line-height: 1.31
+		&__text
+			margin-bottom: 30px
+			font-size: 14px
+			color: #fff 
+			font-weight: normal
+			line-height: 1.79
+		&__link
+			margin-bottom: 30px
+			opacity: .5
+			color: #fff
+			font-size: 14px
+			font-weight: normal
+			line-height: 1.79
+			a 
+				color: #fff
+	&-row
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-between
+	&-column
+		div
+			margin-bottom: 14px
+		&__text
+			font-size: 14px
+			font-weight: normal
+			color: #fff 
+			line-height: 1.79
+		a 
+			font-size: 14px
+			font-weight: normal
+			color: #197be6
+			&:hover
+				color: #fff
+	&-social
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-between
+		align-items: center
+		margin-top: 16px
+		li 
+			max-width: 24px
+			&:hover a
+				opacity: .2
+
+.popular
+	padding: 50px 0 80px
+	&-title
+		text-align: center
+		color: #fff 
+		margin-bottom: 40px
+		ine-height: 1
+		font-size: 26px
+		font-weight: 300
+	&-row
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-between
+	&-article
+		width: 31.6%
+		margin-bottom: 30px
+	&-button
+		text-align: center
+		a 
+			max-width: 360px
+			width: 100%
+			display: inline-block
+			margin: 0 auto
+			background: #197be6
+			border-radius: 4px
+			height: 45px
+			color: #fff
+			padding: 13px 0
+			font-weight: 400
+			line-height: normal
+			font-size: 14px
+			&:hover
+				background: #1991eb
+
+.action
+	margin-bottom: 20px
+	&-wrap
+		background-size: cover!important
+		background-position: center!important
+		padding: 30px 0 38px
+		position: relative
+		border-radius: 6px
+		overflow: hidden
+		box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.1)
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			opacity: .26
+			background-image: linear-gradient(to bottom, #0e1522, rgba(14, 21, 34, 0) 53%, #0e1522)
+		&__title
+			max-width: 420px
+			margin: 0 auto 25px
+			text-align: center
+			color: #fff 
+			font-weight: 300
+			font-size: 26px
+			line-height: normal
+	&-row
+		max-width: 662px
+		padding: 0 12px 0 10px
+		margin: 0 auto
+		position: relative
+		z-index: 1
+		form
+			display: flex
+			flex-flow: row nowrap
+			justify-content: space-between
+			div
+				width: 100%
+			input
+				width: 100%
+				height: 45px
+				border-radius: 4px
+				border: none
+	&-input
+		max-width: 415px
+		padding-right: 12px
+		input
+			padding: 10px 16px
+			background: #888d95
+			color: #fff
+			font-size: 14px
+	&-button
+		max-width: 215px
+		input
+			font-size: 14px
+			color: #fff 
+			font-weight: 300
+			background: #ff137d
+			cursor: pointer
+			transition: .2s linear
+			&:hover
+				background: #de146f
+
+/* -- page SCHOOL MAIN -- */
+.content-school
+	background: #111b2c
+	border-radius: 6px
+	padding: 30px 112px 70px 118px
+	box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.1)
+
+.school
+	&-tag
+		display: inline-block
+		margin-bottom: 15px
+		text-transform: uppercase
+		font-size: 12px
+		font-weight: 500
+		color: #fbc100
+		line-height: 1
+		letter-spacing: 1px
+	&-title
+		margin-bottom: 24px
+		line-height: 1.31
+		font-weight: 300
+		font-size: 26px
+	&-link
+		margin: 8px 0 30px
+		display: inline-block
+		font-size: 14px
+		font-weight: normal
+		opacity: .7
+		line-height: 1.79
+		a 
+			color: #fff 
+			opacity: .7
+	&-wrap
+		&__content
+			padding-bottom: 25px
+			p 
+				margin-bottom: 25px
+				line-height: 1.79
+				font-size: 14px
+				font-weight: normal
+		&__title
+			font-size: 23px
+			line-height: 1.09
+			font-weight: 300
+			margin-bottom: 30px
+		&__social
+			display: flex
+			flex-flow: row wrap
+			align-items: center
+			p 
+				position: relative
+				margin-right: 5px
+				padding-right: 25px
+				font-weight: 500
+				letter-spacing: 0.1px
+				&::after
+					content: '/'
+					position: absolute
+					right: 0
+					bottom: -2px
+					font-size: 20px
+					color: #fff
+			ul
+				display: flex
+				flex-flow: row wrap
+				align-items: center
+				li 
+					margin: 0 14px
+					&:hover a
+						opacity: .2
+					img
+						max-height: 19px
+						height: 100%
+
+/* -- page FORECAST -- */
+.statistics-forecasts__tab
+	padding: 17px 30px
+	display: flex
+	flex-flow: row wrap
+	li 
+		font-weight: 500
+		font-size: 14px
+		line-height: 1.86
+		margin-right: 14px
+		a 
+			color: #888d95
+		&:hover a,&.tab-active a
+			color: #fff
+.right
+	&-button
+		text-align: right
+		a 
+			max-width: 360px
+			text-align: center
+			width: 100%
+			display: inline-block
+			margin: 0 auto
+			background: #197be6
+			border-radius: 4px
+			height: 45px
+			color: #fff
+			padding: 13px 0
+			font-weight: 400
+			line-height: normal
+			font-size: 14px
+			&:hover
+				background: #1991eb
+
+.news 
+	padding-bottom: 50px
+	.news-article
+		margin-bottom: 30px
+
+.block-tag
+	margin-bottom: 15px
+	.wrapper
+		display: block
+.tag
+	&-name
+		font-size: 22px
+		font-weight: 500
+		color: #fbc100
+	&-text
+		opacity: .6
+		font-size: 12px
+		font-weight: 500
+		line-height: 1.5
+
+/* -- page Bookmakers Rating Internal -- */
+.button-fullwidth
+	text-align: center
+	a 
+		width: 100%
+		max-width: 100%
+.testimonials
+	&-wrap
+		background: #111b2c
+		border-radius: 6px
+		box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.1)
+		margin-bottom: 30px
+	&-filter
+		padding: 17px 30px
+		ul
+			display: flex
+			flex-flow: row wrap
+			li 
+				color: #fff 
+				padding-right: 14px
+				position: relative
+				font-size: 14px
+				font-weight: 500
+				line-height: 1.86
+				margin-right: 30px
+				cursor: pointer
+				&::after
+					content: ''
+					position: absolute
+					top: 0
+					right: 0
+					background-size: contain!important
+					background-position: center!important
+					background-repeat: no-repeat!important
+					height: 100%
+					width: 7px
+					background: url(../img/filter.png)
+				a 
+					color: #fff
+	&-head
+		padding: 30px 30px 6px
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-between
+		&__info
+			p
+				font-size: 17px
+				font-weight: 500
+				line-height: 1.76
+				margin-bottom: 10px
+				img
+					margin: 0 10px 0 20px
+		&__quantity
+			font-size: 26px
+			font-weight: 300
+			line-height: 1.31
+			margin-bottom: 9px
+		&__button
+			margin-bottom: 19px
+			a 
+				max-width: 170px
+				text-align: center
+				width: 100%
+				display: inline-block
+				margin: 0 auto
+				background: #197be6
+				border-radius: 4px
+				height: 45px
+				color: #fff
+				padding: 15px 30px
+				font-weight: 400
+				line-height: normal
+				font-size: 14px
+				&:hover
+					background: #1991eb
+	&-col
+		padding: 16px 200px 16px 30px
+		border-bottom: 1px solid rgba(255, 255, 255, 0.05)
+		position: relative
+		display: flex
+		flex-flow: row nowrap
+		&__img
+			min-width: 50px
+			max-width: 50px
+			height: 50px
+			border-radius: 50%
+			overflow: hidden
+			margin-right: 13px
+			img
+				width: 100%
+		&__text
+			p 
+				font-size: 15px
+				font-weight: normal
+				line-height: 1.6
+		&__title
+			font-size: 18px
+			margin-bottom: 3px
+			font-weight: 500
+			line-height: 1.3
+		&__info
+			position: absolute
+			right: 30px
+			top: 16px
+			max-width: 150px
+			text-align: right
+			p 
+				margin-bottom: 2px
+				font-size: 17px
+				font-weight: 500
+				line-height: 1.76
+			img
+				margin-bottom: 3px
+			span
+				display: block
+				font-size: 14px
+				font-weight: normal
+				opacity: .5
+
+/* -- page FORECAST MAIN -- */
+.forecastMain
+	&-tag
+		margin-bottom: 15px
+		color: #fbc100
+		font-size: 12px
+		font-weight: 500
+		letter-spacing: 1px
+		line-height: 1px
+	&-head
+		margin-bottom: 25px
+		padding-right: 100px
+		position: relative
+		&__title
+			margin-bottom: 4px
+			font-size: 26px
+			line-height: 1.31
+			font-weight: 300
+		&__info
+			p 
+				font-size: 14px
+				font-weight: normal
+				letter-spacing: 0.5px
+				opacity: .5
+				display: flex
+				flex-flow: row wrap
+				align-items: center
+				img
+					width: 20px
+					height: 20px
+					margin-right: 10px
+		&__right
+			margin-top: 4px
+			position: absolute
+			right: 0
+			top: 0
+			text-align: right
+			span
+				display: block
+				margin-bottom: 1px
+				font-size: 14px
+				font-weight: normal
+				opacity: .5
+				line-height: 1.86
+			&-date
+				margin-bottom: 1px
+				line-height: 1.3
+				font-size: 20px
+				font-weight: normal
+			&-time
+				line-height: 1.86
+				font-size: 14px
+				font-weight: normal
+	.about-col__link
+		margin-top: 10px
+	&-text
+		padding-bottom: 30px
+		p 
+			font-size: 14px
+			font-weight: normal
+			line-height: 1.79
+			margin-bottom: 25px
+
+/* -- page Bookmakers Rating Main -- */
+.bookmakersMain
+	&-wrapper
+		padding: 30px 115px
+		background: #111b2c
+		border-radius: 6px
+		box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.1)
+	&-tag
+		display: inline-block
+		margin-bottom: 15px
+		color: #fbc100
+		font-size: 12px
+		font-weight: 500
+		text-transform: uppercase
+		letter-spacing: 1px
+		line-height: 1
+	&-head
+		&__title
+			font-size: 23px
+			font-weight: 300
+			line-height: 1.31
+			padding-bottom: 14px
+	&-title
+		font-size: 26px
+		font-weight: 300
+		line-height: 1.31
+		padding-bottom: 14px
+	&-logo
+		max-height: 45px
+		margin-bottom: 6px
+	&-row
+		margin-bottom: 55px
+		position: relative
+		min-height: 290px
+		padding: 26px 28px 30px
+		&__top,&__bottom
+			position: relative
+			z-index: 1
+		&__top
+			margin-bottom: 22px
+			p 
+				margin-bottom: 1px
+				font-size: 17px
+				font-weight: 500
+				line-height: 1.76
+		&__bottom
+			ul
+				li
+					font-size: 14px
+					line-height: 1.93
+					position: relative
+					padding-left: 28px
+					&::after
+						content: ''
+						position: absolute
+						right: 0
+						width: 16px
+						height: 16px
+						top: 50%
+						left: 0
+						transform: translate(0,-50%)
+						background: url(../img/checkbox.png)
+						background-size: contain!important
+	&-img
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-size: cover!important
+		background-position: center!important
+		overflow: hidden
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background-color: rgba(0, 0, 0, 0.46)
+	&-info
+		padding-bottom: 33px
+		&__row
+			display: flex
+			flex-flow: row wrap
+			justify-content: space-between
+		&__col
+			margin-bottom: 17px
+			width: 45.8%
+			p 
+				font-size: 12px
+				margin-bottom: 6px
+				font-weight: normal
+				line-height: normal
+				display: flex
+				flex-flow: row wrap
+				justify-content: space-between
+		&__bar
+			border-radius: 5.5px
+			overflow: hidden
+			background: #bbbbbb
+			box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.1)
+			span
+				display: block
+				background: #197be6
+				height: 5px
+	&-text
+		margin-bottom: 50px
+		p 
+			font-size: 14px
+			font-weight: normal
+			line-height: 1.79
+			margin-bottom: 30px
+		ul 
+			li 
+				position: relative
+				font-size: 14px
+				font-weight: normal
+				line-height: 1.79
+				margin-bottom: 5px
+				padding-left: 25px
+				&::after
+					content: ''
+					position: absolute
+					width: 7px
+					height: 7px
+					border-radius: 50%
+					top: 50%
+					left: 0
+					transform: translate(0,-50%)
+					background: #1991eb
+	&-link
+		margin-bottom: 30px
+		a 
+			text-align: center
+			width: 100%
+			display: inline-block
+			margin: 0 auto
+			line-height: 1.5
+			background: #197be6
+			border-radius: 4px
+			height: 36px
+			color: #fff
+			padding: 9px 0 8px
+			font-weight: 400
+			line-height: normal
+			font-size: 14px
+			font-weight: 500
+			&:hover
+				background: #1991eb
+
+.testimonials-block
+	&__wrap
+		background: #111b2c
+		border-radius: 6px
+		box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.1)
+	&__link
+		text-align: center
+		padding: 24px 0 30px
+		a 
+			max-width: 360px
+			text-align: center
+			width: 100%
+			display: inline-block
+			margin: 0 auto
+			line-height: 1.5
+			background: #197be6
+			border-radius: 4px
+			height: 36px
+			color: #fff
+			padding: 8px 0 7px
+			font-weight: 400
+			line-height: normal
+			font-size: 14px
+			font-weight: 500
+			&:hover
+				background: #1991eb
+
+/* -- page Bookmakers Rating -- */
+.bookmakersRating
+	&-wrap
+		background: #111b2c
+		border-radius: 6px
+		box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.1)
+		margin-bottom: 45px
+	&-col
+		display: flex
+		flex-flow: row nowrap
+		padding: 25px 30px
+		height: 85px
+		align-items: center
+		border-bottom: 1px solid rgba(255, 255, 255, 0.05)
+		position: relative
+		&:last-child
+			border-bottom: none
+	&-num
+		margin-right: 24px
+		p
+			color: #fbc100
+			font-size: 12px
+			font-weight: 500
+			line-height: 1
+			letter-spacing: 1px
+	&-logo
+		max-width: 90px
+		margin-right: 59px
+		img
+			max-height: 31px
+	&-star
+		margin-right: 30px
+	&-graph
+		display: flex
+		flex-flow: row wrap
+		align-items: center
+		img
+			margin-right: 8.5px
+			height: 18px
+		span
+			font-size: 14px
+			font-weight: 600
+	&-link
+		position: absolute
+		right: 30px
+		top: 50%
+		transform: translate(0,-50%)
+		a 
+			font-weight: 500
+			color: #fff
+			font-size: 14px
+			line-height: 1.5
+			background: #197be6
+			padding: 9px 25px 8px
+			border-radius: 4px
+			&:hover
+				background: #1991eb
+
+.sidebar
+	&-bookmakersRating
+		&__hide
+			padding: 20px 20px 18px
+			font-size: 18px
+			font-weight: 500
+			line-height: 1.44
+			display: none
+		&__button
+			padding: 27px 20px 25px
+			text-align: center
+			display: none
+			a 
+				font-size: 15px
+				font-weight: 500
+				color: #197be6
+				letter-spacing: 0.5px
+		&__head
+			padding: 20px 30px 22px
+			border-bottom: 1px solid rgba(#fff, 0.05)
+		&__title
+			font-size: 18px
+			font-weight: 500
+			line-height: 1
+			&::after
+				content: ''
+				position: absolute
+				top: 0
+				right: -18px
+				background-size: contain!important
+				background-position: center!important
+				background-repeat: no-repeat!important
+				height: 100%
+				width: 7px
+				background: url(../img/triangle.png)
+				display: none
+				transition: .1s linear
+			&.sidebar-title__active::after
+				transform: rotate(180deg)
+		&__col
+			padding: 20px
+			height: 75px
+			display: flex
+			flex-flow: row nowrap
+			justify-content: space-between
+			align-items: center
+			border-bottom: 1px solid rgba(#fff, 0.05)
+		&__arrow
+			background: url(../img/triangle.png)
+			background-size: 7px
+			background-position: center
+			background-repeat: no-repeat
+			width: 15px
+			height: 15px
+			cursor: pointer
+		&__toggle
+			width: 48px
+			height: 27px
+			border-radius: 13.4px
+			background: #0e1522
+			transition: .1s linear
+			position: relative
+			cursor: pointer
+			.toggle-bar
+				width: 17px
+				height: 16px
+				border-radius: 50%
+				background: #fff
+				transition: .1s linear
+				position: absolute
+				top: 5px
+				left: 7px
+			&.toggle-active
+				background: #197be6
+				.toggle-bar
+					left: auto
+					right: 7px
+	&-link
+		text-align: center
+		a 
+			font-weight: 500
+			color: #fff
+			font-size: 14px
+			line-height: 1.5
+			background: #197be6
+			padding: 9px 25px 8px
+			border-radius: 4px
+			height: 36px
+			margin-top: 10px
+			width: 100%
+			display: block
+			&:hover
+				background: #1991eb
+
+
+/* -- page News Main-- */
+.small-news__sidebar
+	margin-bottom: 30px
+	width: 100%
+.news-article__sidebar
+	width: 100%
+	margin-bottom: 30px
+.newsMain
+	&-head
+		margin-bottom: 30px
+		&__title
+			margin-bottom: 7px
+			font-size: 26px
+			line-height: 1.31
+			font-weight: 300
+		p 
+			font-size: 14px
+			font-weight: normal
+			opacity: .5
+			line-height: 1.5
+	&-tag
+		margin: 0 14px 15px 0
+		color: #fbc100
+		font-size: 12px
+		font-weight: 500
+		letter-spacing: 1px
+		line-height: 1px
+		display: inline-block
+
+/* -- page Coupons -- */
+.content-coupons
+	margin-bottom: 50px
+
+.coupons
+	&-head
+		display: block!important
+	&-title
+		&__hide
+			display: none
+			padding: 0 0 24px 20px
+			font-size: 18px
+			font-weight: 500
+			line-height: 1.17
+	&-filter
+		margin-bottom: 30px
+		max-width: 220px
+		background: #111b2c
+		border-radius: 5px
+		padding: 17px 30px
+		display: flex
+		flex-flow: row nowrap
+		li 
+			position: relative
+			font-size: 14px
+			font-weight: 500
+			line-height: 1.86
+			padding: 0 16px 0 0
+			margin-right: 30px
+			cursor: pointer
+			&::after
+				content: ''
+				position: absolute
+				top: 0
+				right: 0
+				background-size: contain!important
+				background-position: center!important
+				background-repeat: no-repeat!important
+				height: 100%
+				width: 7px
+				background: url(../img/filter.png)
+			&:last-child
+				margin-right: 0
+			a 
+				color: #fff
+	&-wrap
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-between
+	&-post
+		width: 48%
+		border-radius: 6px
+		background: #111b2c
+		margin-bottom: 30px
+		box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.1)
+		&__row
+			position: relative
+			height: 273px
+		&__img
+			position: absolute
+			overflow: hidden
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background-size: cover!important
+			background-position: center!important
+			&::after
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				background-image: linear-gradient(to bottom, rgba(14, 21, 34, 0), rgba(14, 21, 34, 0.71))
+				box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.1)
+		&__wrap
+			position: absolute
+			z-index: 1
+			bottom: 20px
+			left: 0
+			width: 100%
+			padding: 0 30px
+			max-width: 340px
+			p 
+				margin-bottom: 6px
+				font-size: 14px
+				opacity: .5
+				font-weight: normal
+				line-height: 1.5
+				a 
+					color: #fff
+		&__tag
+			color: #fbc100
+			display: inline-block
+			font-size: 12px
+			font-weight: 500
+			letter-spacing: 1px
+			line-height: 1
+			text-transform: uppercase
+		&__title
+			font-size: 26px
+			font-weight: 300
+			color: #fff
+			line-height: 1.42
+			margin-bottom: 8px
+			a 
+				color: #fff
+		&__link
+			font-size: 14px
+			font-weight: 500
+			color: #197be6
+		&__bottom
+			position: relative
+			padding: 20px 30px
+			height: 88px
+			img
+				max-height: 45px
+				position: absolute
+				left: 30px
+				top: 50%
+				transform: translate(0,-50%)
+			a 
+				position: absolute
+				right: 24px
+				top: 50%
+				transform: translate(0,-50%)
+				display: inline-block
+				background: #197be6
+				border-radius: 4px
+				max-width: 300px
+				width: 100%
+				max-width: 110px
+				color: #fff 
+				font-size: 14px
+				font-weight: 500
+				line-height: 1.5
+				text-align: center
+				padding: 9px 10px 8px
+				&:hover
+					background: #1991eb
+		&__big
+			width: 100%
+			border-radius: 6px
+			background: #111b2c
+			margin-bottom: 30px
+			box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.1)
+			.coupons-post__wrap
+				max-width: 460px
+
+/* -- page Coupons Main -- */
+.couponsMain
+	&-wrap
+		padding: 57px 112px 75px 115px
+		background: #111b2c
+		border-radius: 6px
+		box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.1)
+	&-head
+		margin-bottom: 30px
+		&__wrap
+			display: flex
+			flex-flow: row nowrap
+			justify-content: space-between
+			margin-bottom: 8px
+			img
+				max-height: 25px
+			div
+				display: flex
+				align-items: center
+		&__title
+			font-size: 26px
+			font-weight: 300
+			line-height: 1.31
+		p 
+			font-size: 14px
+			font-weight: normal
+			line-height: 1.5
+			opacity: .5
+	&-text
+		margin: 30px 0 0
+		p 
+			font-size: 14px
+			font-weight: normal
+			margin-bottom: 30px
+			line-height: 1.79
+	&-link
+		margin-top: 40px
+		a 
+			width: 100%
+			display: flex
+			flex-flow: row wrap
+			align-items: center
+			justify-content: center
+			text-align: center
+			height: 45px
+			border-radius: 4px
+			background: #ff137d
+			padding: 7px 30px 9px
+			color: #fff
+			font-size: 16px
+			font-weight: 500
+			letter-spacing: 0.5px
+			line-height: normal
+			span
+				padding-right: 18px
+			img
+				max-height: 25px
+
+.bonuses
+	margin-bottom: 80px
+	&-row
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-between
+	.coupons-post
+		width: 31.6%
+	.right-button
+		text-align: center
+	&-title
+		margin-bottom: 40px
+		text-align: center
+		font-weight: 300
+		font-size: 26px
+		color: #fff 
+		line-height: 1
+
+/* -- page Matches -- */
+.content-matches
+	border-radius: 5px
+	box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.1)
+	background-color: #111b2c
+
+.matches
+	&-head
+		padding: 18px 30px 16px
+		border-bottom: 1px solid rgba(255, 255, 255, 0.05)
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-between
+		&__right
+			li
+				font-size: 18px
+				font-weight: normal
+				color: #888d95
+				line-height: 1.44
+				padding: 0 10px
+				transition: .2s linear
+				cursor: pointer
+				&.li-active,&:hover
+					color: #fff
+				&:last-child
+					padding-right: 0
+				a 
+					color: #888d95
+					&:hover
+						color: #fff
+		&__left
+			li 
+				transition: .2s linear
+				position: relative
+				cursor: pointer
+				color: #fff
+				font-size: 14px
+				font-weight: 500
+				line-height: 1.86
+				margin-right: 18px
+				padding-right: 17px
+				&::after
+					content: ''
+					position: absolute
+					top: 0
+					right: 0
+					background-size: contain!important
+					background-position: center!important
+					background-repeat: no-repeat!important
+					height: 100%
+					width: 7px
+					background: url(../img/filter.png)			
+				a 
+					color: #fff
+		ul
+			display: flex
+			flex-flow: row wrap
+	&-name
+		padding: 21px 40px 16px
+		border-bottom: 1px solid rgba(255, 255, 255, 0.05)
+		display: flex
+		flex-flow: row wrap
+		align-items: center
+		&__img
+			width: 48px
+			height: 48px
+			margin-right: 16px
+			border-radius: 50%
+			background-position: center 16px!important
+			background-size: 30px!important
+			background-repeat: no-repeat!important
+		p
+			font-weight: bold
+			font-size: 14px
+			color: #fff
+			letter-spacing: 0.5px
+	&-col
+		padding: 16px 40px 10px
+		border-bottom: 1px solid rgba(255, 255, 255, 0.05)
+		display: flex
+		flex-flow: row nowrap
+		align-items: center
+		position: relative
+		&:last-child
+			border-bottom: none
+		&__first
+			p 
+				margin-bottom: 3px
+				font-size: 20px
+				line-height: 1.3
+				font-weight: normal
+			span
+				font-size: 14px
+				opacity: .5
+				line-height: 1.86
+				font-weight: normal
+		&__row
+			display: flex
+			flex-flow: row wrap
+			align-items: center
+			justify-content: space-between
+			max-width: 240px
+			width: 100%
+			p 
+				color: #fff
+				font-size: 25px
+				font-weight: bold
+				letter-spacing: 4.3px
+		&__name
+			max-width: 90px
+			width: 100%
+			text-align: center
+			margin: 0 30px
+			color: #fff 
+			line-height: 1.5
+			font-size: 14px
+			font-weight: bold
+			letter-spacing: 0.5px
+		&__status
+			position: absolute
+			right: 30px
+			height: 27px
+			top: 50%
+			width: 79px
+			transform: translate(0%,-50%)
+		&__title
+			font-weight: bold
+			font-size: 14px
+			margin-left: 30px
+		&__info
+			position: absolute
+			right: 92px
+			top: 50%
+			max-width: 217px
+			width: 100%
+			transform: translate(0%,-50%)
+			display: flex
+			flex-flow: row wrap
+			align-items: center
+			justify-content: space-between
+			p
+				font-size: 14px
+				font-weight: normal
+				line-height: 1.86
+
+.content-matches__future
+	.matches-head
+		border-bottom: none
+	.matches-col
+		padding-right: 320px			
+.matches
+	p
+		font-size: 18px
+		font-weight: 500
+	&-menu
+		display: flex
+		flex-flow: row wrap
+		align-items: center
+		justify-content: space-between
+		position: relative
+		padding: 18px 30px 16px
+		border-bottom: 1px solid rgba(255, 255, 255, 0.05)
+		&__row
+			display: flex
+			flex-flow: row wrap
+			align-items: center
+			justify-content: space-between
+			max-width: 200px
+			width: 100%
+			position: absolute
+			right: 100px
+			top: 50%
+			transform: translate(0%,-50%)
+			p
+				font-size: 14px
+	&-title
+		font-size: 18px
+		font-weight: 500
+		line-height: 1.44
+		padding: 20px 0 0 10px
+		display: none
+	&-blue
+		background-color: #197be6
+	&-yellow
+		background-color: #fbc100
+	&-gray
+		background-color: #414a58
+
+.sidebar
+	&-forecasts
+		&__head
+			padding: 15px 30px 23px
+			border-bottom: 1px solid rgba(255, 255, 255, 0.05)
+			display: flex
+			flex-flow: row wrap
+			align-items: center
+			justify-content: space-between
+			p
+				font-size: 18px
+				font-weight: 500
+				color: #fff
+			a 
+				font-weight: normal
+				font-size: 14px
+				color: #1991eb
+		&__wrap
+			padding: 13px 30px
+			border-bottom: 1px solid rgba(255, 255, 255, 0.05)
+			display: flex
+			flex-flow: row nowrap
+			&:last-child
+				border-bottom: none
+		&__col
+			padding-right: 34px
+			p
+				margin-bottom: 10px
+				font-weight: normal
+				font-size: 20px
+				line-height: 1.1
+				color: #fff
+			span
+				font-size: 14px
+				font-weight: normal
+			div
+				display: flex
+				flex-flow: row nowrap
+				align-items: center
+				margin-bottom: 8px
+				img
+					max-width: 22px
+					margin-right: 14px
+				p
+					margin-bottom: 0
+					font-weight: bold
+					font-size: 13px
+
+.content-matches__main
+	.matches
+		&-head
+			position: relative
+			padding-left: 125px
+		&-title
+			display: block
+			position: absolute
+			left: 30px
+			top: 50%
+			padding: 0
+			transform: translate(0%,-50%)
+
+.block-matches
+	display: flex
+	flex-flow: row nowrap
+	align-items: center
+	max-width: 620px
+	justify-content: flex-end
+	width: 100%
+	.matches-col__name
+		&:last-child
+			text-align: left
+
+@import "_media"
